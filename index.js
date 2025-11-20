@@ -59,7 +59,7 @@ function countRemainingTime() {
     // function to add 0 if it is less than 10 
     function format(num) {
         if(num < 10) {
-            return num = `0${num}`
+            return `0${num}`  // directly return the formatted string
         } else {
             return num
         }

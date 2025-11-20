@@ -8,7 +8,7 @@ const signupCountdownItems = [...document.querySelectorAll(".time_value_signup")
 const months = ["jan", "feb", "march", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
 
 // Dynamic approach, always 10 days ahead
-let tempDate = new Date();
+const tempDate = new Date();
 let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
 let tempDay = tempDate.getDate();
@@ -49,7 +49,7 @@ function countRemainingTime() {
     // function to add 0 if it is less than 10 
     function format(num) {
         if(num < 10) {
-            return num = `0${num}`
+            return `0${num}`  // directly return the formatted string
         } else {
             return num
         }
@@ -84,25 +84,23 @@ const errMsgEl = get(".error");
 const submitBtn = get("#submitBtn");
 
 // FORM VALIDATION
-const emailPattern = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
+const emailPattern = /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
 
-const showError = (el, message) => {
-    const element = document.getElementById(el);
+const showError = (element, message) => {
     element.classList.add("err")
     errMsgEl.classList.add("show");
     const textMsgEl = errMsgEl.querySelector("span");
     textMsgEl.textContent = message;
 }
 
-const clearValidation = (el) => {
-    const element = document.getElementById(el);
+const clearValidation = (element) => {
     element.classList.remove("err");
     errMsgEl.classList.remove("show");
 }
 
 const validateName = (fName) => {
     if(fName === "") {
-        showError("fullName", "Full name can not be blank");
+        showError(nameEl, "Full name can not be blank");
         return false;
     }
     errMsgEl.classList.remove("show");
@@ -112,11 +110,11 @@ const validateName = (fName) => {
 const validateEmail = (email) => {
     // Empty value
     if(!email) {
-        showError("emailAddress", "Email can not be blank!")
+        showError(emailEl, "Email can not be blank!")
         return false;   
     }
     if(!isValidEmailFormat(email)) {
-        showError("emailAddress","Please enter valid email format.")
+        showError(emailEl,"Please enter valid email format.")
         return false;
     }
     errMsgEl.classList.remove("show");
@@ -152,11 +150,11 @@ signupFormEl.addEventListener("submit", (e) => {
 });
 
 emailEl.addEventListener("input", () => {
-    clearValidation("emailAddress");
+    clearValidation(emailEl);
 });
 
 nameEl.addEventListener("input", () => {
-    clearValidation("fullName");
+    clearValidation(nameEl);
 });
 
 
