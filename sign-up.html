@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./main.css">
+  <title>Frontend Mentor | Officelite coming soon site</title>
+</head>
+<body>
+  <header class="inner_page_header">
+    <div class="content header_content">
+      <a href="index.html" class="home_link" aria-label="Home page">
+        <img src="./assets/shared/logo.svg" alt="officelite logo" />
+      </a>
+    </div>
+  </header>
+  <main>
+    <section class="signup_section">
+      <div class="content">
+        <!-- CTA text content -->
+        <div class="signup_cta_grid">
+          <article class="signup_cta_text_content">
+            <h1 class="page_title signup_page_title"> Work smarter. Save time.</h1>
+            <p class="lead_text_signup">Easily manage your projects. Get on the list and receive in-app perks available only to early subscribers. We are moving into final development and getting ready for official launch soon.</p>
+            <!-- COUNTDOWN wrapper -->
+            <div class="signup_countdown_container">
+              <p class="deadline deadline_signup">coming <span class="deadline_date" id="deadline_date">11 nov 2024</span></p>
+              <div class="countdown_timer_signup">
+                  <!-- HOURS -->
+                  <div class="countdown_signup">
+                      <p class="time_value_signup" id="days">47</p>
+                      <p class="text_value">days</p>
+                  </div>
+                  <!-- DAYS -->
+                  <div class="countdown_signup">
+                      <p class="time_value_signup" id="hours">07</p>
+                      <p class="text_value">hours</p>
+                  </div>
+                  <!-- MINs -->
+                  <div class="countdown_signup">
+                      <p class="time_value_signup" id="mins">56</p>
+                      <p class="text_value">min</p>
+                  </div>
+                  <!-- SECs -->
+                  <div class="countdown_signup">
+                      <p class="time_value_signup" id="sec">14</p>
+                      <p class="text_value">sec</p>
+                  </div>
+              </div>
+           </div>
+          </article>
+          <!-- FORM wrapper -->
+          <div class="form_wrap">
+            <form class="signup_form" id="signupForm">
+                <div class="form_row">
+                    <label for="fullName">Name</label>
+                    <input type="text" class="form_input" id="fullName" placeholder="Name">
+                    <span class="bar"></span>
+                </div>
+                <div class="form_row">
+                    <label for="emailAddress">Email</label>
+                    <input type="text" class="form_input" id="emailAddress" placeholder="Email" novalidate>
+                </div>
+                <div class="form_row">
+                    <label for="planSelect">Choose a plan of subsription</label>
+                    <select name="subscription_plan" id="planSelect">
+                        <option value="free"><span class="basic">Basic Pack</span> Free</option>
+                        <option value="pro">Pro</option>
+                        <option value="ultimate">Ultimate</option>
+                      </select>
+                </div>
+                <div class="form_row">
+                    <label for="companyName">Telephone</label>
+                    <input type="tel" class="form_input" id="phoneNumber" placeholder="Phone Number">
+                </div>
+                <div class="form_row">
+                    <label for="companyName">Company</label>
+                    <input type="text" class="form_input" id="companyName" placeholder="Company">
+                </div>
+                <p class="error"><img src="./assets/sign-up/icon-cross.svg" alt="cross icon on red background" /> <span>This is not valid email</span></p>
+                <button type="submit" id="submitBtn" class="submit_btn">Get on the list</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="bg_element_signup">
+    <!-- <img src="./assets/sign-up/bg-pattern-side.svg" class="bg_circles" alt="" /> -->
+  </div>
+  <script type="module" src="./signup.js"></script>
+</body>
+</html>
